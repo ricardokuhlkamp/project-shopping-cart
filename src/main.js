@@ -12,7 +12,7 @@ document.querySelector('.cep-button').addEventListener('click', searchCep);
 async function criaListagemDeProdutos(produto) {
   const dataResults = await fetchProductsList(produto);
 
-  dataResults.results.forEach((dataResult) => {
+  dataResults.forEach((dataResult) => {
     const retornoImg = createProductElement(dataResult);
     products.appendChild(retornoImg);
     console.log(retornoImg);
