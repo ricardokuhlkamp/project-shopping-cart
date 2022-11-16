@@ -15,17 +15,15 @@ describe('Teste a função fetchProductsList', () => {
 
   it('fetch é chamado com o endpoint correto ao executar fetchProductsList', async () => {
     const endpoint = 'https://api.mercadolibre.com/sites/MLB/search?q=computador';
+    await fetchProductsList('computador');
     expect(fetch).toHaveBeenCalledWith(endpoint);
   });
   it('Teste se o retorno da função fetchProductsList com o argumento "computador" é uma estrutura de dados igual ao objeto computadorSearch, que já está importado no arquivo', async () => {    
-    await expect(fetchProductsList('computador')).toMatchObject(computadorSearch);
+    expect(await fetchProductsList('computador')).toMatchObject(computadorSearch);
   });
-  it("Teste se, ao chamar a função fetchProductsList sem argumento, retorna um erro com a mensagem: Termo de busca não informado", async () => {
-    await expect(fetchProductsList()).rejects.toThrow('Termo de busca não informado');
-  })
-
-  // it('...', () => {
-  // });
+  it("Teste se, ao chamar a função fetchProductsList sem argumento, retorna um erro com a mensagem: Termo de busca não informado", () => {
+    expect(fetchProductsList()).rejects.toThrow('Termo de busca não informado');
+  });
 });
 
 
