@@ -1,7 +1,7 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
 import { fetchProductsList } from './helpers/fetchFunctions';
-import { createProductImageElement } from './helpers/shopFunctions';
+import { createProductElement } from './helpers/shopFunctions';
 
 const products = document.querySelector('.products');
 
@@ -12,13 +12,11 @@ document.querySelector('.cep-button').addEventListener('click', searchCep);
 async function criaListagemDeProdutos(produto) {
   const dataResults = await fetchProductsList(produto);
 
-  dataResults.forEach((dataResult) => {
-    const retornoImg = createProductImageElement(dataResult.thumbnail);
-    products.appendChild(retornoImg);
+  dataResults.results.forEach((dataResult) => {
+    const retornoImg = createProductElement(dataResult);
+    products.appendChild(retornoImg)
+    console.log(retornoImg);
   });
-
-  // createProductImageElement(dataResult.thumbnail);
-  // createCustomElement(produto, )
 }
 
 criaListagemDeProdutos('computador');
