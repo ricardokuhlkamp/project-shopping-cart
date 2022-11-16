@@ -4,7 +4,7 @@ import product from './mocks/product';
 
 // implemente seus testes aqui
 describe('Teste a função fetchProduct', () => {
-  it('...', () => {
+  it('Execute a função fetchProductsList com o argumento "computador" e teste se fetch foi chamada', () => {
     
   });
 });
