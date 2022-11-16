@@ -14,7 +14,7 @@ async function criaListagemDeProdutos(produto) {
 
   dataResults.results.forEach((dataResult) => {
     const retornoImg = createProductElement(dataResult);
-    products.appendChild(retornoImg)
+    products.appendChild(retornoImg);
     console.log(retornoImg);
   });
 }
