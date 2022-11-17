@@ -29,17 +29,17 @@ const erroAPI = () => {
 
 async function criaListagemDeProdutos(produto) {
   addLoading();
-  const dataResults = await fetchProductsList(produto);
-  if (!dataResults) {
+  try {
+    const dataResults = await fetchProductsList(produto);
+    dataResults.forEach((dataResult) => {
+      const retorno = createProductElement(dataResult);
+      products.appendChild(retorno);
+    });
+  } catch (error) {
     erroAPI();
   }
-  if (!dataResults === false) {
-    removeLoading();
-  }
-  dataResults.forEach((dataResult) => {
-    const retorno = createProductElement(dataResult);
-    products.appendChild(retorno);
-  });
+
+  removeLoading();
 }
 
 criaListagemDeProdutos('computador');
