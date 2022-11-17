@@ -1,6 +1,6 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
-import { fetchProductsList } from './helpers/fetchFunctions';
+import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
 import { createProductElement } from './helpers/shopFunctions';
 
 const products = document.querySelector('.products');
@@ -20,17 +20,27 @@ const removeLoading = () => {
   products.removeChild(tagH2);
 };
 
+const erroAPI = () => {
+  const tag = document.createElement('h2');
+  tag.classList.add('error');
+  tag.innerHTML = 'Algum erro ocorreu, recarregue a página e tente novamente';
+  products.appendChild(tag);
+};
+
 async function criaListagemDeProdutos(produto) {
   addLoading();
   const dataResults = await fetchProductsList(produto);
+  if (!dataResults) {
+    erroAPI();
+  }
   if (!dataResults === false) {
     removeLoading();
   }
-
   dataResults.forEach((dataResult) => {
-    const retornoImg = createProductElement(dataResult);
-    products.appendChild(retornoImg);
+    const retorno = createProductElement(dataResult);
+    products.appendChild(retorno);
   });
 }
 
 criaListagemDeProdutos('computador');
+fetchProduct('MLB1405519561');
