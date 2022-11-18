@@ -5,18 +5,10 @@ export const getAddress = async (query) => {
   const BRASIL_API = 'https://brasilapi.com.br/api/cep/v2/';
   const promise1 = fetch(`${AWESOME_API}${query}`);
   const promise2 = fetch(`${BRASIL_API}${query}`);
-  // if (!promise1 && !promise2) {
-  //   const tagEndereco = document.querySelector('.cart__address');
-  //   tagEndereco.innerHTML = 'CEP não encontrado';
-  //   throw new Error(`${tagEndereco.value}`);
-  // }
   try {
     const promises = [promise1, promise2];
     const ResultPromises = await Promise.any(promises);
     const data = await ResultPromises.json();
-    // if (data.message) {
-    //   tagAddress.innerHTML = 'CEP não encontrado';
-    // } else
     console.log(data);
     if (data.code === 'not_found' || data.type === 'service_error') {
       tagAddress.innerHTML = 'CEP não encontrado';
