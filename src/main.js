@@ -1,7 +1,11 @@
 import { searchCep } from './helpers/cepFunctions';
 import './style.css';
 import { fetchProductsList, fetchProduct } from './helpers/fetchFunctions';
-import { createProductElement } from './helpers/shopFunctions';
+import {
+  createProductElement,
+  createCartProductElement,
+  totalPrice } from './helpers/shopFunctions';
+import { getSavedCartIDs } from './helpers/cartFunctions';
 
 const products = document.querySelector('.products');
 const tagH2 = document.createElement('h2');
@@ -44,3 +48,17 @@ async function criaListagemDeProdutos(produto) {
 
 criaListagemDeProdutos('computador');
 fetchProduct('MLB1405519561');
+
+async function verificaLocalStorage() {
+  if (localStorage.getItem('cartProducts')) {
+    const savedCardIDSStorage = getSavedCartIDs();
+    const retornoMap = savedCardIDSStorage.map((savedId) => fetchProduct(savedId));
+    const container = document.querySelector('.cart__products');
+    const results = await Promise.all(retornoMap);
+    const lis = results.map((result) => createCartProductElement(result));
+    lis.forEach((li) => container.appendChild(li));
+  }
+  totalPrice();
+}
+
+verificaLocalStorage();

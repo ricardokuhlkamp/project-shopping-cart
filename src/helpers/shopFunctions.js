@@ -41,6 +41,17 @@ export const getIdFromProduct = (product) => (
   product.querySelector('span.product__id').innerText
 );
 
+export const totalPrice = () => {
+  const totalPrices = document.querySelector('.total-price');
+  const prices = document.querySelectorAll('.cart__product');
+  // console.log(prices)
+  let result = 0;
+  prices.forEach((price) => {
+    result += Number(price.children[1].children[1].children[0].innerText);
+  });
+  totalPrices.textContent = `${result}`;
+};
+
 /**
  * Função que remove o produto do carrinho.
  * @param {Element} li - Elemento do produto a ser removido do carrinho.
@@ -49,6 +60,7 @@ export const getIdFromProduct = (product) => (
 const removeCartProduct = (li, id) => {
   li.remove();
   removeCartID(id);
+  totalPrice();
 };
 
 /**
@@ -131,6 +143,7 @@ export const createProductElement = ({ id, title, thumbnail, price }) => {
     const elementoRetornado = createCartProductElement(requisicao);
     const ol = document.querySelector('.cart__products');
     ol.appendChild(elementoRetornado);
+    totalPrice();
   });
 
   return section;
