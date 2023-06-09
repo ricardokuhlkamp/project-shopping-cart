@@ -1,13 +1,26 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Project Shopping Cart
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<img src='images/resultado-final-project-shopping-cart.gif'>
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## 📝 Proposta:
+Neste projeto desenvolveu-se um carrinho de compras para auxiliar as pessoas consumidoras a salvar os itens que desejam comprar.
+
+---
+
+## 💡 Habilidades desenvolvidas:
+
+- Uso da linguagem Javascript no desenvolvimento de funções e interação com a APi.
+- Implementação de funcionalidades para escolha de produtos para adição ao carrinho de compras, soma ou subtração dos valores dos produtos caso sejam respectivamente adicionados ou deletados.
+- uso do localstorage mantendo produtos no carrinho.
+
+---
+
+## ⚙️ API utilizada:
+A aplicação faz uso da API do mercado livre:
+- https://api.mercadolibre.com/sites/MLB/search?q=
+
+---
+
+🔗 [Linkedin ricardo-kühlkamp-dev](linkedin.com/in/ricardo-kühlkamp-dev)
+
+---
