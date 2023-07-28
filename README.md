@@ -35,7 +35,7 @@ A aplicação faz uso da API do mercado livre:
 ## Instalação e Uso
 1.  Clone o repositório do projeto:
 ```
-git clone https://github.com/seu-usuario/project-shopping-cart.git
+git clone https://git@github.com:ricardokuhlkamp/project-shopping-cart.git
 ```
 2.  Instale as dependências:
 ```
