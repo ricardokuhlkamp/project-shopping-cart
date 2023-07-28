@@ -1,7 +1,8 @@
 # Project Shopping Cart
 
 <img src='images/resultado-final-project-shopping-cart.gif'>
-Descrição curta do projeto: Desenvolvimento de um carrinho de compras para uma loja online.
+## Descrição curta do projeto
+Desenvolvimento de um carrinho de compras para uma loja online.
 
 ## Visão Geral
 O Project Shopping Cart é um projeto destinado à criação de um carrinho de compras para uma loja online. O objetivo é fornecer uma experiência de compra simples e intuitiva para os clientes, permitindo que eles adicionem produtos ao carrinho, visualizem os itens selecionados, modifiquem a quantidade e finalizem a compra de forma eficiente.
