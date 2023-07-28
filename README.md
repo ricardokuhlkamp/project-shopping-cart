@@ -1,6 +1,7 @@
 # Project Shopping Cart
 
 <img src='images/resultado-final-project-shopping-cart.gif'>
+
 ## Descrição curta do projeto
 Desenvolvimento de um carrinho de compras para uma loja online.
 
